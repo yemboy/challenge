@@ -1,0 +1,26 @@
+es-master-node:
+  hosts:
+    es-master-1:                    # hostname
+      ansible_host: es.everis.net   # ip address
+      ansible_user: challenge
+      memory: 2048                  # ram to be assigned in MB
+      ansible_ssh_private_key_file: .vagrant/machines/es-master-1/virtualbox/private_key
+
+kibana-node:
+  hosts:
+    kibana-1:
+      ansible_host: ki.everis.net
+      ansible_user: challenge
+      memory: 1024
+      ansible_ssh_private_key_file: .vagrant/machines/kibana-1/virtualbox/private_key
+
+logstash-node:
+  hosts:
+    logstash-1:
+      ansible_host: lo.everis.net
+      ansible_user: challenge
+      memory: 1024
+      ansible_ssh_private_key_file: .vagrant/machines/logstash-1/virtualbox/private_key
+
+
+

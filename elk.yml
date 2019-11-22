@@ -1,0 +1,17 @@
+- hosts: es-master-node
+  become: true
+  roles:
+    - { role: elastic.elasticsearch, cluster_http_port: 9201, cluster_transport_tcp_port: 9301}
+
+- hosts: kibana-node
+  become: true
+  roles:
+    - { role: sansible.kibana, kibana_server_port: 5601, cluster_http_port: 9201 }
+
+- hosts: logstash-node
+  become: true
+  roles:
+    - { role: ashokc.logstash, cluster_http_port: 9201, filebeat_2_logstash_port: 5044 }
+
+
+
